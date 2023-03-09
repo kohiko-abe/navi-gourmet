@@ -15,6 +15,9 @@
               <option value="5">3000m </option>
           </select>
       </form>
-      <button type="button" class="btn btn-outline-secondary" id="btn">現在地を取得</button>
+      <button type="button" class="btn btn-outline-secondary" id="get_position_btn">現在地を取得</button>
   </div>
+  <p class="position"></p>
+  <p class="status"></p>
+  <script scr = "{{ asset('js/app.js') }}"></script>
 @endsection
