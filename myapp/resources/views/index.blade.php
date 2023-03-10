@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('head')
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
 @section('title', 'Index')
 
 @section('content')
@@ -17,7 +21,6 @@
       </form>
       <button type="button" class="btn btn-outline-secondary" id="get_position_btn">現在地を取得</button>
   </div>
-  <p class="position"></p>
+  <p class="coordinate"></p>
   <p class="status"></p>
-  <script scr = "{{ asset('js/app.js') }}"></script>
 @endsection
