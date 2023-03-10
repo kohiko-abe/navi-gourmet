@@ -7,6 +7,16 @@ function getPosition() {
   const status = document.querySelector(".status");
   const coordinate = document.querySelector(".coordinate");
   let range = ranges.value
+  let parking = 0;
+  let card = 0;
+
+  if (document.getElementById('parking').checked) {
+    parking = 1;
+  }
+
+  if (document.getElementById('card').checked) {
+    card = 1;
+  }
 
   if (navigator.geolocation) {
     status.textContent = "";
@@ -26,11 +36,14 @@ function getPosition() {
       "latitude": latitude,
       "longitude": longitude,
       "range": range,
+      "parking": parking,
+      "card": card,
     });
     console.log(data);
-    fetch('/index', {
+
+    fetch('index', {
       method: 'POST',
-      header: { 
+      headers: { 
         "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content,
         'Content-Type': 'application/json' 
     },
@@ -38,8 +51,8 @@ function getPosition() {
     })
     .then(response => response.json())
     .then(res => {
-      //display(res);
-      console.log(res);
+
+      console.log(JSON.parse(res));
     });
 
   }
