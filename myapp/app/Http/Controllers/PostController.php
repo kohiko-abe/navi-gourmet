@@ -10,6 +10,7 @@ class PostController extends Controller
         $latitude =  $request->get('latitude'); 
         $longitude = $request->get('longitude');
         $range = $request->get('range');
+        $start = $request->get('start');
         $parking = $request->get('parking');
         $card = $request->get('card');
 
@@ -18,6 +19,7 @@ class PostController extends Controller
         'lat' => $latitude, 
         'lng' => $longitude, 
         'range' => $range,
+        'start' => $start,
         'parking' => $parking,
         'card' => $card,
         'format' => 'json', 
