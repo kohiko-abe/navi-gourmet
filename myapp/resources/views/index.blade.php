@@ -20,8 +20,20 @@
         <label><input type="checkbox" name="parking" id="parking">駐車場</label>
         <label><input type="checkbox" name="card" id="card">クレジットカード</label>
       </form>
-      <button type="button" class="btn btn-outline-secondary" id="get_position_btn">検索</button>
+      <button type="button" value="1" class="btn btn-outline-secondary" id="get_position_btn">検索</button>
   </div>
   <p class="coordinate"></p>
   <p class="status"></p>
+  <p class="result"></p>
+  <p class="pages"></p>
+  <div class="restaurant_cards"></div>
+
+  <template id="template">
+    <ul>
+      <li class="name"></li>
+      <li class="open"></li>
+      <li class="parking"></li>
+      <li class="credit_card"></li>
+    </ul>
+  </template>
 @endsection

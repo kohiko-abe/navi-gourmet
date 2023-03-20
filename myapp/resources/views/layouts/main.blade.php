@@ -13,5 +13,6 @@
     <div class="footer">
       @yield('footer')
     </div>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
   </body>
 </html>
